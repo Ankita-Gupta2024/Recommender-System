@@ -1,24 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/XGn1nos4)
-# DSGA1004 - BIG DATA
-## Final project
-
-*Handout date*: 2023-04-12
-
-*Checkpoint submission*: 2023-04-28
-
-*Submission deadline*: 2023-05-16
-
-
-# Overview
-
-In the final project, you will apply the tools you have learned in this class to solve a realistic, large-scale applied problem.
-Specifically, you will build and evaluate a collaborative-filter based recommender system. 
-
-In either case, you are encouraged to work in **groups of up to 3 students**:
-
-- Groups of 1--2 will need to implement one extension (described below) over the baseline project for full credit.
-- Groups of 3 will need to implement two extensions for full credit.
-
 ## The data set
 
 In this project, we'll use the [ListenBrainz](https://listenbrainz.org/) dataset, which we have prepared for you in Dataproc's HDFS at `/user/bm106_nyu_edu/1004-project-2023/`.  A copy is also available on the Greene cluster at `/scratch/work/courses/DSGA1004-2021/listenbrainz/`.
@@ -28,7 +7,7 @@ Each observation consists of a single interaction between a user and a song.
 **Note**: this is real data.  It may contain offensive language (e.g. in song titles or artist names).  It is entirely possible to complete the assignment using only the interaction data and ID fields without investigating metadata.
 
 
-## Basic recommender system [80% of grade]
+## Basic recommender system 
 
 1.  As a first step, you will need to partition the interaction data into training and validation samples as discussed in lecture.
     I recommend writing a script do this in advance, and saving the partitioned data for future use.
@@ -70,7 +49,7 @@ If too many people run inefficient code simultaneously, it can slow down the ent
 **NOTE**: At the time the project is released (2023-04-12), the version of Parquet currently installed on Dataproc has a known issue with reading large parquet files.  It should not cause any problems here, but just in case it does, we have provided a reduced training set (`*_train_small.parquet`) for you to work with.
 
 
-## Extensions [20% of grade]
+## Extensions
 
 For full credit, implement an extension on top of the baseline collaborative filter model.
 Again, if you're working in a group of 3, you must implement two extensions for full credit.
@@ -99,14 +78,3 @@ Include a PDF of your final report through Brightspace.  Specifically, your fina
 - Documentation of extension(s)
 
 Any additional software components that you use should be cited and documented with installation instructions.
-
-## Timeline
-
-It will be helpful to commit your work in progress to the repository.
-Toward this end, we recommend the following timeline to stay on track:
-
-- [ ] 2023/04/21: data pre-processing, train/validation partitioning, popularity baseline model.
-- [ ] **2023/04/28**: evaluation, checkpoint submission with baseline results.
-- [ ] 2023/05/05: Working latent factor model implementation on subsample of training data.
-- [ ] 2023/05/12: Scale up to the full dataset and develop extensions.
-- [ ] 2023/05/16: final project submission.  **NO EXTENSIONS PAST THIS DATE.**
